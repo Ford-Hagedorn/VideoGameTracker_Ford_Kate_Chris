@@ -12,7 +12,11 @@ bp = Blueprint('games', __name__)
 def index():
     response = requests.get('https://api.dccresource.com/api/games')
     games = json.loads(response.content, object_hook=lambda d: SimpleNamespace(**d))
-    for game in games:
-        print(game.name)
-    return ('Hello World!')
+    return games
 
+@bp.route('/Search')
+def search_by_name(input):
+    games = index()
+    for game in games:
+        if game.name == input:
+            return game
