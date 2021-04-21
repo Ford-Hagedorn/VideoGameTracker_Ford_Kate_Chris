@@ -20,3 +20,22 @@ def search_by_name(input):
     for game in games:
         if game.name == input:
             return game
+
+def search_by_year(input):
+    games = index()
+    for game in games:
+        if game.year == input:
+            return game
+
+def search_by_console(input):
+    games = index()
+    for game in games:
+        if game.platform == input:
+            return game
+
+def search_by_genre(input):
+    games = index()
+    for game in games:
+        if game.genre == input:
+            return game
+
