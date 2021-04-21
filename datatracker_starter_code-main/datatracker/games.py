@@ -2,7 +2,7 @@ import json
 from types import SimpleNamespace
 
 import requests
-from flask import Flask, jsonify, request, redirect, flash, render_template, url_for, Blueprint
+from flask import Flask, jsonify, request, redirect, flash, render_template, url_for, Blueprint, app
 #https://api.dccresource.com/
 import datatracker
 
@@ -39,3 +39,31 @@ def search_by_genre(input):
         if game.genre == input:
             return game
 
+from flask.views import View
+
+class ShowGames(View):
+
+    def dispatch_request(self):
+
+        pass
+
+
+class ListView(View):
+
+    def get_template_name(self):
+        raise NotImplementedError()
+
+    def render_template(self, context):
+        return render_template(self.get_template_name(), **context)
+
+    def dispatch_request(self):
+        context = {'objects': self.get_objects()}
+        return self.render_template(context)
+
+class GameView(ListView):
+
+    def get_template_name(self):
+        return
+
+    def get_objects(self):
+        pass
