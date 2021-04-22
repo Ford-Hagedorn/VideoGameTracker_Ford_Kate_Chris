@@ -14,7 +14,7 @@
     var consoleSales = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: [{% platform in platforms}{{platform[platform]}}],
+        labels: [{% for platform in platforms %}{{platform[platform]}}{% endfor %}],
         datasets: [{
         label: 'Sales Per Console',
         data: ['year >= 2013', 'globalSales'],
