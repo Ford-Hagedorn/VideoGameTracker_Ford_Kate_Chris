@@ -5,7 +5,9 @@
     <title>Game Graph!</title>
 
 </head>
+<a href="https://api.dccresource.com/api/games"></a>
 <body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
 <canvas id="consoleSales" width="400" height="400"></canvas>
 <script>
     var ctx = document.getElementById('consoleSales').getContext('2d');
@@ -13,8 +15,9 @@
     type: 'bar',
     data: {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{'Sales per Console',
-        data: [*****],
+        datasets: [{
+        label: 'Sales Per Console',
+        data: ['year > 2012', 'globalSales'],
         backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
             'rgba(54, 162, 235, 0.2)',
