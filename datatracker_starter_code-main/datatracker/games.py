@@ -25,4 +25,5 @@ def search_by_name(input):
 def view_consoles():
     games = index()
     for game in games:
-        return game.platform
+        platform += game.platform.distinct
+    return platform
