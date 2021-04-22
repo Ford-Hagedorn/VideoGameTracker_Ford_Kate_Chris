@@ -29,11 +29,20 @@ def view_consoles():
         platform += game.platform.distinct
     return platform
 
-@bp.route('/')
+@bp.route('/chart')
 def chart():
     games = index()
     platforms = []
     for game in games:
-        platforms += game.platform.distinct
+        # if game.platform is not in platforms
+        # what is the easiest way to see if item is in a python list?
+        # add it to platforms
+        # platforms += game.platform.distinct
+
+    # create dictionary using all unique console from that list
+    # best way to create a dictionary with keys from a list?
+
+    for game in games:
+    # if game.console is in that dictionary, add its total sales to that value
 
     return render_template('chart.html', platforms=platforms)
