@@ -28,3 +28,12 @@ def view_consoles():
     for game in games:
         platform += game.platform.distinct
     return platform
+
+@bp.route('/')
+def chart():
+    games = index()
+    platforms = []
+    for game in games:
+        platforms += game.platform.distinct
+
+    return render_template('chart.html', platforms=platforms)
