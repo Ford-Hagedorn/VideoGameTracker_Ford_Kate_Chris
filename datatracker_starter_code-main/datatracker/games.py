@@ -24,6 +24,7 @@ def search_by_name(input):
 @bp.route('/Console')
 def view_consoles():
     games = index()
+    platform = []
     for game in games:
         platform += game.platform.distinct
     return platform
