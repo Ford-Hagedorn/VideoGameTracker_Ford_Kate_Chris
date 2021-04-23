@@ -15,10 +15,10 @@
     var consoleSales = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: [{% for platform in platforms %}{{platform[platform]}}{% endfor %}],
+        labels: [{{dct}}],
         datasets: [{
         label: 'Sales Per Console',
-        data: ['year >= 2013', 'globalSales'],
+        data: [{{dct}}],
         backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
             'rgba(54, 162, 235, 0.2)',
